@@ -12,6 +12,34 @@ const menSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true
+    },
+    smallImg: {
+        type: [String],
+        required: true
+    },
+    size: {
+        type: [String],
+        required: true
+    },
+    color: {
+        type: [String],
+        required: true
+    },
+    details: {
+        type: String,
+        required: true
+    },
+    detailsList: {
+        type: [String],
+        required: true
+    },
+    moreInfo: {
+        Size: String,
+        StyleBottom: String,
+        color: String,
+        Material: String,
+        Climate: String,
+        Pattern: String
     }
 }, {
     strict: false
