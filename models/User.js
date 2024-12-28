@@ -8,14 +8,14 @@ const userSchema = new Schema({
         unique: true,
         required: true
     },
-    // salt: {
-    //     type: String,
-    //     select: fal
-    // }, // Remove select: false if present
-    // hash: {
-    //     type: String,
-    //     select: true
-    // }
+    salt: {
+        type: String,
+        select: false
+    }, // Remove select: false if present
+    hash: {
+        type: String,
+        select: false
+    }
 })
 
 userSchema.plugin(passportLocalMongoose);

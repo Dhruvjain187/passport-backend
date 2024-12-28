@@ -442,6 +442,111 @@ const func = async () => {
                 Pattern: "Solid"
             }
         },
+        {
+            brand: "Pierce Gym Short",
+            price: 27.00,
+            color: ["red", "black", "gray"],
+            size: ["S"],
+            smallImg: ["https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh12-red_back.jpg.webp",
+                "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh12-red_main.jpg.webp"],
+            image: "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/dd9d4b841b5fd12ad027fd4a762e5cf8/m/s/msh12-red_back.jpg.webp",
+            details: "The Pierce Gym Short is similar to our Arcadio Gym Short, but designed with a fitted, tapered look. A flat waistband with an adjustable drawstring adds comfort, with zippered pockets for safe, easy storage.",
+            detailsList: [
+                "Dark red cotton shorts.",
+                "87% Supplex, 13% Lycra.",
+                "Adjustable drawstring waistband.",
+                "Built-in mesh brief.",
+                "Machine wash cold, tumble dry low."
+            ],
+            moreInfo: {
+                Size: "0",
+                StyleBottom: "Base Layer, Compression, Tights, Workout Pants",
+                color: "Black",
+                Material: "Spandex",
+                Climate: "Indoor, Warm, Hot",
+                Pattern: "Solid"
+            }
+        },
+        {
+            brand: "Arcadio Gym Short",
+            price: 20.00,
+            color: ["red", "black", "gray"],
+            size: [],
+            smallImg: ["https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh11-blue_main.jpg.webp"
+                , "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh11-blue_back.jpg.webp",
+            ],
+            image: "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/dd9d4b841b5fd12ad027fd4a762e5cf8/m/s/msh11-blue_back.jpg.webp",
+            details: "The Pierce Gym Short is similar to our Arcadio Gym Short, but designed with a fitted, tapered look. A flat waistband with an adjustable drawstring adds comfort, with zippered pockets for safe, easy storage.",
+            detailsList: [
+                "Dark red cotton shorts.",
+                "87% Supplex, 13% Lycra.",
+                "Adjustable drawstring waistband.",
+                "Built-in mesh brief.",
+                "Machine wash cold, tumble dry low."
+            ],
+            moreInfo: {
+                Size: "0",
+                StyleBottom: "Base Layer, Compression, Tights, Workout Pants",
+                color: "Black",
+                Material: "Spandex",
+                Climate: "Indoor, Warm, Hot",
+                Pattern: "Solid"
+            }
+        },
+        {
+            brand: "Sol Active Short",
+            price: 32.00,
+            color: ["red", "black", "gray"],
+            size: [],
+            smallImg: ["https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh09-blue_main.jpg.webp",
+                'https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh09-blue_alt1.jpg.webp',
+                "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh09-blue_back.jpg.webp",
+            ],
+            image: "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/dd9d4b841b5fd12ad027fd4a762e5cf8/m/s/msh10-blue_alt1.jpg.webp",
+            details: "The Pierce Gym Short is similar to our Arcadio Gym Short, but designed with a fitted, tapered look. A flat waistband with an adjustable drawstring adds comfort, with zippered pockets for safe, easy storage.",
+            detailsList: [
+                "Dark red cotton shorts.",
+                "87% Supplex, 13% Lycra.",
+                "Adjustable drawstring waistband.",
+                "Built-in mesh brief.",
+                "Machine wash cold, tumble dry low."
+            ],
+            moreInfo: {
+                Size: "0",
+                StyleBottom: "Base Layer, Compression, Tights, Workout Pants",
+                color: "Black",
+                Material: "Spandex",
+                Climate: "Indoor, Warm, Hot",
+                Pattern: "Solid"
+            }
+        },
+        {
+            brand: "Troy Yoga Short",
+            price: 24.00,
+            color: ["white", "orange"],
+            size: ["M", "S", "O", 32],
+            smallImg: ["https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh09-blue_main.jpg.webp",
+                'https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh09-blue_alt1.jpg.webp',
+                "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/a77c7250ec0d0de5ce037bc19b2f004c/m/s/msh09-blue_back.jpg.webp",
+            ],
+            image: "https://argento-breeze-m2.swissupdemo.com/media/catalog/product/cache/dd9d4b841b5fd12ad027fd4a762e5cf8/m/s/msh09-blue_alt1.jpg.webp",
+            details: "The Pierce Gym Short is similar to our Arcadio Gym Short, but designed with a fitted, tapered look. A flat waistband with an adjustable drawstring adds comfort, with zippered pockets for safe, easy storage.",
+            detailsList: [
+                "Dark red cotton shorts.",
+                "87% Supplex, 13% Lycra.",
+                "Adjustable drawstring waistband.",
+                "Built-in mesh brief.",
+                "Machine wash cold, tumble dry low."
+            ],
+            moreInfo: {
+                Size: "0",
+                StyleBottom: "Base Layer, Compression, Tights, Workout Pants",
+                color: "Black",
+                Material: "Spandex",
+                Climate: "Indoor, Warm, Hot",
+                Pattern: "Solid"
+            }
+        }
     ])
 }
 

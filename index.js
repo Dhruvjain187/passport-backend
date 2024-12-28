@@ -58,51 +58,50 @@ function verifyPassword(password, salt, storedHash) {
     return hash == storedHash;
 }
 
+// passport.use(new LocalStrategy({
+//     usernameField: 'email',
+// },
+//     async function (email, password, done) {
+//         const user = await User.findOne({ email }).select('+hash +salt');
+//         console.log(user.salt);
+//         const isValid = verifyPassword(password, user.salt, user.hash);
+//         console.log(isValid);
+//     }
+// ));
+
 passport.use(new LocalStrategy({
     usernameField: 'email',
 },
-    async function (email, password, done) {
-        const user = await User.findOne({ email }).select('+hash +salt');
-        console.log(user.salt);
-        const isValid = verifyPassword(password, user.salt, user.hash);
-        console.log(isValid);
+    async (email, password, done) => {
+        try {
+            const user = await User.findOne({ email }).select('+hash +salt');
+
+            if (!user) {
+                return done(null, false, { message: "Invalid email or password" })
+            }
+
+            const isValidPassaword = verifyPassword(password, user.salt, user.hash);
+
+            if (!isValidPassaword) {
+                return done(null, false, { message: "Invalid email or password" })
+            }
+
+            // user = {
+            //     _id: user._id,
+            //     email: user.email,
+            //     username: username
+            // };
+
+            return done(null, user);
+
+            // return done(null, user);
+
+        } catch (err) {
+            done(err);
+        }
     }
 ));
 
-// passport.use(new LocalStrategy({
-//     usernameField: 'email',
-// },
-//     function (email, password, done) {
-//         User.findOne({ email }, function (err, user) {
-//             if (err) { return done(err); }
-//             if (!user) { return done(null, false); }
-//             if (!user.verifyPassword(password, user.salt, user.hash)) { return done(null, false); }
-//             return done(null, user);
-//         }).select('+hash +salt');
-//     }
-// ));
-
-// passport.use(new LocalStrategy({
-//     usernameField: 'email',
-// },
-//     function (email, password, done) {
-//         User.findOne({ email: email }, function (err, user) {
-//             console.log(user);
-//             if (err) { return done(err); }
-//             if (!user) { return done(null, false); }
-
-//             const hashedPassword = pbkdf2Sync(password, user.salt, 10000, 64, 'sha512').toString('hex');
-//             console.log(hashedPassword)
-//             if (hashedPassword === user.password) {
-//                 return done(null, user);
-//             } else {
-//                 return done(null, false, { message: 'Incorrect password.' });
-//             }
-//         });
-//         // console.log("email=", email);
-//         // console.log("password=", password)
-//     }
-// ));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -129,7 +128,32 @@ app.get("/login", (req, res) => {
 })
 
 app.get("/card", catchAsync(async (req, res) => {
+    // const { limit, page } = req.query;
+
+    // const startIdx = (page - 1) * limit;
+    // const endIdx = (page) * limit;
+
     const men = await Men.find({});
+    // const result = {}
+
+    // result.results = men.slice(startIdx, endIdx);
+
+    // if (endIdx < men.length) {
+    //     result.next = {
+    //         page: page + 1,
+    //         limit: limit
+    //     }
+    // }
+
+    // if (startIdx > 0) {
+    //     result.prev = {
+    //         page: page - 1,
+    //         limit: limit
+    //     }
+    // }
+    // console.log(result)
+
+    // res.send(result);
     res.send(men)
 }))
 
@@ -145,9 +169,28 @@ app.get("/card/:id", catchAsync(async (req, res) => {
 
 // })
 
-app.post("/login", passport.authenticate("local"), (req, res) => {
-    console.log("logged in")
+app.get("/logout", async (req, res, next) => {
+    console.log("hitting")
+    req.logOut((err) => {
+        if (err) {
+            return next(err);
+        }
+        console.log("almost")
+    })
     res.status(200).send("successful");
+})
+
+app.post("/login", passport.authenticate("local"), (req, res) => {
+    console.log("logged in");
+    console.log(req.user);
+    // req.login(registeredUser, function (err) {
+    //     if (err) {
+    //         return next(err);
+    //     }
+    //     res.redirect('/campgrounds');
+    // });
+
+    res.status(200).send(req.user);
 })
 
 app.post("/sign-up", validateUser, async (req, res, next) => {
@@ -161,7 +204,7 @@ app.post("/sign-up", validateUser, async (req, res, next) => {
                 next(err);
             }
         })
-        res.status(200).json("Successfully registered");
+        res.status(200).send(req.user);
     } catch (err) {
         res.status(200).json("registration failed");
     };
